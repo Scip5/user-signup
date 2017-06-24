@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <style> 
+        body { text-align: center; }
+        .error { color: red; }
+    </style>
+
+    <h1>User Signup</h1>
+    <form method='POST'>
+        <p><span style="color: red;"> NOTE* </span> <strong>Username & Password cannot be less than 2 characters and/or more than 20 characters,
+         cannot contain any spaces. Passwords must match, email is optional.</strong>
+        </p>
+        <br>
+        <label>Username:
+            <input type="text" name="username" value="{{username}}" />
+        </label>
+        <p class="error"><em>{{username_error}}</em></p>
+        <p>
+        <label>Password:
+            <input type="password" name="password" value="{{password}}" />
+        </label>
+        </p>
+        <p class="error"><em>{{password_error}}</em></p>
+        <p>
+        <label>Verify Password:
+            <input type="password" name="verify" value="{{verify}}" />
+        </label>
+        </p>
+        <p class="error"><em>{{verify_error}}</em></p>
+        <label>Email (Optional):
+            <input type="text" name="email" value="{{email}}" />
+        </label>
+        <p class="error"><em>{{email_error}}</em></p>
+        </p>
+        <p> 
+        <label>
+            <input class="align" type="submit" name="submit" value="Submit" />
+        </p>
+    </form>
+
+{% endblock %}
